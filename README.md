@@ -11,7 +11,7 @@ Additional results and figures can be found in the `supplementary_material.pdf`.
 Please follow instructions mentioned in the [INSTALL.md](/INSTALL.md) file.
 
 ## Download
-The used datasets and extracted features can be downloaded [here](https://www.kaggle.com/datasets/anonymisedanon/iswc-2024-submission-3047). 
+The used datasets and extracted features can be downloaded [here](https://uni-siegen.sciebo.de/s/P5Rn3liscPn8y0u). 
 
 ## Reproduce Feature Extraction
 To reproduce the visual feature extraction, one needs to download each dataset's video data. Note that we used downsampled versions (12 FPS) of the video streams. The datasets can be downloaded here:
