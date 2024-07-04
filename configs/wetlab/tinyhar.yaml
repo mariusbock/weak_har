@@ -1,0 +1,77 @@
+name: tinyhar
+dataset_name: wetlab
+has_null: True
+anno_json: [
+  'data/wetlab/annotations/loso_sbj_0.json',
+  'data/wetlab/annotations/loso_sbj_1.json',
+  'data/wetlab/annotations/loso_sbj_2.json',
+  'data/wetlab/annotations/loso_sbj_3.json',
+  'data/wetlab/annotations/loso_sbj_4.json',
+  'data/wetlab/annotations/loso_sbj_5.json',
+  'data/wetlab/annotations/loso_sbj_6.json',
+  'data/wetlab/annotations/loso_sbj_7.json',
+  'data/wetlab/annotations/loso_sbj_8.json',
+  'data/wetlab/annotations/loso_sbj_9.json',
+  'data/wetlab/annotations/loso_sbj_10.json',
+  'data/wetlab/annotations/loso_sbj_11.json',
+  'data/wetlab/annotations/loso_sbj_12.json',
+  'data/wetlab/annotations/loso_sbj_13.json',
+  'data/wetlab/annotations/loso_sbj_14.json',
+  'data/wetlab/annotations/loso_sbj_15.json',
+  'data/wetlab/annotations/loso_sbj_16.json',
+  'data/wetlab/annotations/loso_sbj_17.json',
+  'data/wetlab/annotations/loso_sbj_18.json',
+  'data/wetlab/annotations/loso_sbj_19.json',
+  'data/wetlab/annotations/loso_sbj_20.json',
+  'data/wetlab/annotations/loso_sbj_21.json',
+]
+dataset: {
+  sens_folder: ./data/wetlab/raw/inertial,
+  vid_folder: ./data/wetlab/raw/ego,
+  emb_folder: ./data/wetlab/processed/i3d_features/48_frames_12_stride, 
+  input_dim: 3,
+  emb_dim: 2048,
+  fps: 12,
+  clip_size: 48,
+  stride: 12,
+  nb_classes: 9,
+  sampling_rate: 50,
+  t_window_size: 50,
+  t_window_overlap: 50,
+  c_window_size: 200,
+  c_window_overlap: 75,
+  tiou_thresholds: [0.3, 0.4, 0.5, 0.6, 0.7]
+}
+clustering: {
+  clustering_method: 'gmm',
+  nb_clusters: 100,
+  outlier_removal: False,
+  outlier_eps: -1,
+  dim_reduction: False,
+  thresholding: False,
+  threshold_dist: 0.5,
+  sampling_strategy: 'distance',
+  nb_samples: 1
+}
+model: {
+  conv_kernels: 40,
+  conv_layers: 4,
+  conv_kernel_size: 5,
+  dropout: 0.5
+}
+train_cfg: {
+  supervision_type: 'full_supervision',
+  loss_type: 'cross_entropy',
+  label_smoothing: 0.0,
+  lr: 0.0001,
+  lr_decay: 0.9,
+  lr_step: 10,
+  epochs: 30,
+  weight_decay: 0.000001,
+  weight_init: 'xavier_normal',
+  weighted_loss: True,
+}
+loader: {
+  batch_size: 100,
+  shuffle: True
+}

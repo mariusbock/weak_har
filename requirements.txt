@@ -1,0 +1,11 @@
+pandas==2.2.1
+numpy==1.26.3
+hdbscan==0.8.33
+umap==0.1.1
+opencv-python==4.9.0.80
+matplotlib==3.8.3
+seaborn==0.13.2
+neptune==1.9.1
+einops==0.7.0
+transformers==4.37.2
+moviepy==1.0.3 
