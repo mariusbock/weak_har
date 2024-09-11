@@ -31,3 +31,5 @@ To obtain a summarized overview of your seeded runs, run the `seed_averaging.py`
 - If you ran three experiments with varying different seeds place all three folders in a directory.
 - Name each folder following the name structure `seed_X` where `X` is the employed seed of each experiment.
 
+## Cite as
+Coming soon
